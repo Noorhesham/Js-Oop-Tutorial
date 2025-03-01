@@ -1,0 +1,213 @@
+/* Base styles */
+:root {
+  --background: #121212;
+  --card-bg: #202020;
+  --text-primary: #ffffff;
+  --text-secondary: #999999;
+  --accent: rgba(255, 255, 255, 0.1);
+}
+
+i .container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Section Header */
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.section-header h2 {
+  font-size: 20px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.arrow {
+  font-size: 24px;
+  opacity: 0.6;
+}
+
+.navigation-arrows {
+  display: flex;
+  gap: 8px;
+}
+
+.nav-arrow {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--accent);
+  border: none;
+  color: var(--text-primary);
+  font-size: 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s ease;
+}
+
+.nav-arrow:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.nav-arrow:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Games Grid */
+.games-grid {
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  gap: 16px;
+  padding: 4px;
+  margin: -4px;
+
+  /* Hide scrollbar but keep functionality */
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+}
+
+.games-grid::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+
+/* Game Card */
+.game-card {
+  border-radius: 8px;
+  overflow: hidden;
+  background: var(--card-bg);
+  transition: transform 0.2s ease;
+}
+
+.game-card:hover {
+  transform: translateY(-4px);
+}
+
+.game-image {
+  position: relative;
+  aspect-ratio: 16/9;
+  background: #000;
+}
+
+.game-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.game-label {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+  background: rgba(0, 0, 0, 0.8);
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.game-info {
+  padding: 16px;
+}
+
+.game-title {
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 8px;
+  color: var(--text-primary);
+}
+
+.game-price {
+  font-size: 14px;
+  color: var(--text-secondary);
+}
+
+/* Free game styling */
+.game-price.free {
+  color: #00b894;
+}
+
+/* Epic badge */
+.epic-badge {
+  display: inline-block;
+  background: #2a2a2a;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 11px;
+  margin-left: 6px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .game-card {
+    flex: 0 0 250px;
+  }
+
+  .section-header h2 {
+    font-size: 18px;
+  }
+
+  .nav-arrow {
+    width: 28px;
+    height: 28px;
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .game-card {
+    flex: 0 0 200px;
+  }
+
+  .game-info {
+    padding: 12px;
+  }
+
+  .game-title {
+    font-size: 14px;
+  }
+
+  .game-price {
+    font-size: 12px;
+  }
+}
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  padding: 1rem;
+  background: #f5f5f5;
+  border-radius: 8px;
+}
+
+.filter-group {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.filter-group label {
+  font-weight: 500;
+}
+
+select,
+input {
+  padding: 0.5rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background: white;
+}
+
+#searchInput {
+  min-width: 200px;
+}

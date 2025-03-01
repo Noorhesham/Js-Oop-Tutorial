@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Game Store</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="./styles.css" />
+    <link rel="stylesheet" href="./game.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  </head>
+  <body>
+    <div class="container">
+      <!-- Header Navigation -->
+      <header class="header">
+        <div class="search-container">
+          <i class="fas fa-search search-icon"></i>
+          <input type="text" placeholder="Search store" class="search-input" />
+        </div>
+        <nav class="main-nav">
+          <ul>
+            <li><a href="#" class="active">Discover</a></li>
+            <li><a href="#">Browse</a></li>
+            <li><a href="#">News</a></li>
+          </ul>
+        </nav>
+      </header>
+
+      <!-- Main Content -->
+      <main class="main-content">
+        <!-- Featured Game Slider -->
+        <div class="swiper featured-slider">
+          <div class="swiper-wrapper">
+            <!-- Slide 1: 33 Immortals -->
+            <div class="swiper-slide featured-game" data-game="33-immortals">
+              <img src="./imgs/img1.avif" alt="33 Immortals" class="slide-bg" />
+              <div class="featured-content">
+                <div class="game-logo">
+                  <img src="https://placeholder.pics/svg/200x80/FFFFFF/000000/33%20IMMORTALS" alt="33 Immortals Logo" />
+                </div>
+                <div class="game-info">
+                  <div class="release-date">AVAILABLE MARCH 18TH</div>
+                  <div class="game-description">
+                    33 Immortals launches March 18! Join the Rebellion and Face the Wrath of God!
+                  </div>
+                </div>
+                <div class="action-buttons">
+                  <button class="btn-primary">Wishlist Now</button>
+                  <button class="btn-secondary"><i class="fas fa-plus"></i> Add to Wishlist</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Slide 2: Honkai Star Rail -->
+            <div class="swiper-slide featured-game" data-game="honkai-star-rail">
+              <img src="./imgs/img2.avif" alt="Honkai Star Rail" class="slide-bg" />
+              <div class="featured-content">
+                <div class="game-logo">
+                  <img
+                    src="https://placeholder.pics/svg/200x80/FFFFFF/000000/HONKAI%20STAR%20RAIL"
+                    alt="Honkai Star Rail Logo"
+                  />
+                </div>
+                <div class="game-info">
+                  <div class="release-date">NOW AVAILABLE</div>
+                  <div class="game-description">
+                    Embark on an interstellar adventure in Honkai Star Rail! Explore the cosmos and battle powerful
+                    enemies.
+                  </div>
+                </div>
+                <div class="action-buttons">
+                  <button class="btn-primary">Play Now</button>
+                  <button class="btn-secondary"><i class="fas fa-plus"></i> Add to Wishlist</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Slide 3: Marvel Rivals -->
+            <div class="swiper-slide featured-game" data-game="marvel-rivals">
+              <img src="./imgs/img3.avif" alt="Marvel Rivals" class="slide-bg" />
+              <div class="featured-content">
+                <div class="game-logo">
+                  <img
+                    src="https://placeholder.pics/svg/200x80/FFFFFF/000000/MARVEL%20RIVALS"
+                    alt="Marvel Rivals Logo"
+                  />
+                </div>
+                <div class="game-info">
+                  <div class="release-date">COMING SOON</div>
+                  <div class="game-description">
+                    Assemble your team of Marvel heroes and villains in this action-packed competitive game!
+                  </div>
+                </div>
+                <div class="action-buttons">
+                  <button class="btn-primary">Wishlist Now</button>
+                  <button class="btn-secondary"><i class="fas fa-plus"></i> Add to Wishlist</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Slide 4: Infinity Nikki -->
+            <div class="swiper-slide featured-game" data-game="infinity-nikki">
+              <img src="./imgs/img1.avif" alt="Infinity Nikki" class="slide-bg" />
+              <div class="featured-content">
+                <div class="game-logo">
+                  <img
+                    src="https://placeholder.pics/svg/200x80/FFFFFF/000000/INFINITY%20NIKKI"
+                    alt="Infinity Nikki Logo"
+                  />
+                </div>
+                <div class="game-info">
+                  <div class="release-date">COMING APRIL 2024</div>
+                  <div class="game-description">
+                    Explore a world of fashion and adventure in this beautiful dress-up RPG!
+                  </div>
+                </div>
+                <div class="action-buttons">
+                  <button class="btn-primary">Wishlist Now</button>
+                  <button class="btn-secondary"><i class="fas fa-plus"></i> Add to Wishlist</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Slide 5: Blades of Fire -->
+            <div class="swiper-slide featured-game" data-game="blades-of-fire">
+              <img src="./imgs/img2.avif" alt="Blades of Fire" class="slide-bg" />
+              <div class="featured-content">
+                <div class="game-logo">
+                  <img
+                    src="https://placeholder.pics/svg/200x80/FFFFFF/000000/BLADES%20OF%20FIRE"
+                    alt="Blades of Fire Logo"
+                  />
+                </div>
+                <div class="game-info">
+                  <div class="release-date">EARLY ACCESS NOW</div>
+                  <div class="game-description">
+                    Master the art of combat in this intense action RPG with stunning visuals and deep gameplay.
+                  </div>
+                </div>
+                <div class="action-buttons">
+                  <button class="btn-primary">Buy Now</button>
+                  <button class="btn-secondary"><i class="fas fa-plus"></i> Add to Wishlist</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Slide 6: Off The Grid -->
+            <div class="swiper-slide featured-game" data-game="off-the-grid">
+              <img src="./imgs/img3.avif" alt="Off The Grid" class="slide-bg" />
+              <div class="featured-content">
+                <div class="game-logo">
+                  <img
+                    src="https://placeholder.pics/svg/200x80/FFFFFF/000000/OFF%20THE%20GRID"
+                    alt="Off The Grid Logo"
+                  />
+                </div>
+                <div class="game-info">
+                  <div class="release-date">COMING SUMMER 2024</div>
+                  <div class="game-description">
+                    Survive in a dystopian open world where your choices matter and danger lurks around every corner.
+                  </div>
+                </div>
+                <div class="action-buttons">
+                  <button class="btn-primary">Wishlist Now</button>
+                  <button class="btn-secondary"><i class="fas fa-plus"></i> Add to Wishlist</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Game List Sidebar (Custom Pagination) -->
+        <aside class="game-list">
+          <div class="game-item" data-slide-index="1">
+            <img src="./imgs/img2.avif" alt="Honkai Star Rail" />
+            <span>Honkai Star Rail</span>
+          </div>
+          <div class="game-item" data-slide-index="2">
+            <img src="./imgs/img3.avif" alt="Marvel Rivals" />
+            <span>Marvel Rivals</span>
+          </div>
+          <div class="game-item active" data-slide-index="0">
+            <img src="./imgs/img1.avif" alt="33 Immortals" />
+            <span>33 Immortals</span>
+          </div>
+          <div class="game-item" data-slide-index="3">
+            <img src="./imgs/img1.avif" alt="Infinity Nikki" />
+            <span>Infinity Nikki</span>
+          </div>
+          <div class="game-item" data-slide-index="4">
+            <img src="./imgs/img2.avif" alt="Blades of Fire" />
+            <span>Blades of Fire</span>
+          </div>
+          <div class="game-item" data-slide-index="5">
+            <img src="./imgs/img3.avif" alt="Off The Grid" />
+            <span>Off The Grid</span>
+          </div>
+        </aside>
+      </main>
+      <div class="container">
+        <section class="discover-section">
+          <div class="section-header">
+            <h2>Discover Something New <span class="arrow">›</span></h2>
+            <div class="navigation-arrows">
+              <button class="nav-arrow prev" id="prevBtn">‹</button>
+              <button class="nav-arrow next" id="nextBtn">›</button>
+            </div>
+          </div>
+          <div class="games-grid" id="gamesGrid">
+            <!-- Games will be inserted here by JavaScript -->
+          </div>
+        </section>
+      </div>
+      <div class="filters">
+        <div class="filter-group">
+          <label>Genre:</label>
+          <select id="genreFilter">
+            <option value="">All</option>
+            <option value="4">Action</option>
+            <option value="3">Adventure</option>
+            <!-- Add more genres as needed -->
+          </select>
+        </div>
+
+        <div class="filter-group">
+          <label>Platform:</label>
+          <select id="platformFilter">
+            <option value="">All</option>
+            <option value="4">PC</option>
+            <option value="18">PlayStation</option>
+            <!-- Add more platforms as needed -->
+          </select>
+        </div>
+
+        <div class="filter-group">
+          <label>Release Date:</label>
+          <select id="dateFilter">
+            <option value="">All</option>
+            <option value="2020-01-01,2024-12-31">2020s</option>
+            <option value="2010-01-01,2019-12-31">2010s</option>
+          </select>
+        </div>
+
+        <div class="filter-group">
+          <label>Sort By:</label>
+          <select id="sortFilter">
+            <option value="-rating">Top Rated</option>
+            <option value="-released">Newest</option>
+            <option value="name">Name</option>
+          </select>
+        </div>
+
+        <div class="filter-group">
+          <input type="text" id="searchInput" placeholder="Search games..." />
+        </div>
+      </div>
+      <!-- Templates -->
+
+      <template id="gameCardTemplate">
+        <div class="game-card">
+          <div class="game-image">
+            <img src="/placeholder.svg" alt="" />
+            <span class="game-label">Base Game</span>
+          </div>
+          <div class="game-info">
+            <h3 class="game-title"></h3>
+            <div class="game-price"></div>
+          </div>
+        </div>
+      </template>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script type="module" src="./js/script.js"></script>
+  </body>
+</html>
