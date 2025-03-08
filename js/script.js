@@ -4,7 +4,13 @@ import GameView from "./view/gameView.js";
 
 document.addEventListener("DOMContentLoaded", function () {
   // Initialize Swiper
-  const app = new GameController(new GameModel(), new GameView());
+  const app = new GameController(
+    new GameModel({
+      platforms: 187,
+      ordering: "-metacritic",
+    }),
+    new GameView()
+  );
   app.loadGames();
   const swiper = new Swiper(".featured-slider", {
     // Optional parameters

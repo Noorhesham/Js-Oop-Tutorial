@@ -2,7 +2,7 @@
 import { config } from "../config.js";
 
 export class GameModel {
-  constructor() {
+  constructor(filters = {}) {
     this.games = [];
     this.currentPage = 1;
     this.filters = {
@@ -11,6 +11,7 @@ export class GameModel {
       dates: "",
       ordering: "-rating",
       search: "",
+      ...filters,
     };
   }
 
