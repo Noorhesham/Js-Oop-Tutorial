@@ -1,9 +1,10 @@
 export default class GameView {
-  constructor() {
-    this.gamesGrid = document.getElementById("gamesGrid");
+  constructor(id) {
+    this.gamesGrid = document.querySelector(`.${id}`);
     this.template = document.getElementById("gameCardTemplate");
     this.prevBtn = document.getElementById("prevBtn");
     this.nextBtn = document.getElementById("nextBtn");
+    console.log(this.gamesGrid);
   }
 
   renderGames(games) {
@@ -16,7 +17,7 @@ export default class GameView {
 
   createGameCard(game) {
     const clone = this.template.content.cloneNode(true);
-
+    console.log(clone);
     const img = clone.querySelector("img");
     img.src = game.image;
     img.alt = game.title;
@@ -31,17 +32,5 @@ export default class GameView {
     }
 
     return clone;
-  }
-
-  bindPrevButton(handler) {
-    this.prevBtn.addEventListener("click", handler);
-  }
-
-  bindNextButton(handler) {
-    this.nextBtn.addEventListener("click", handler);
-  }
-
-  updateNavigationButtons(currentPage) {
-    this.prevBtn.disabled = currentPage === 1;
   }
 }

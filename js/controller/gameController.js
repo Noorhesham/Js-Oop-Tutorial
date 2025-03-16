@@ -1,7 +1,8 @@
-export class GameController {
-  constructor(model, view) {
+export default class GameController {
+  constructor(model, view, filter = true) {
     this.model = model;
     this.view = view;
+    this.canFilter = filter;
     this.initEventListeners();
   }
 
@@ -11,6 +12,7 @@ export class GameController {
     document.getElementById("nextBtn").addEventListener("click", () => this.nextPage());
 
     // Filter controls
+    if (!this.canFilter) return;
     document
       .getElementById("genreFilter")
       .addEventListener("change", (e) => this.handleFilterChange("genres", e.target.value));
@@ -29,8 +31,9 @@ export class GameController {
   }
 
   async handleFilterChange(filterType, value) {
-    this.model.updateFilters({ [filterType]: value });
-    await this.loadGames();
+    const games = await this.model.updateFilters({ [filterType]: value });
+    console.log(games);
+    this.view.renderGames(games);
   }
 
   async loadGames() {
@@ -39,12 +42,12 @@ export class GameController {
   }
 
   async nextPage() {
-    await this.model.nextPage();
-    await this.loadGames();
+    const games = await this.model.nextPage();
+    this.view.renderGames(games);
   }
 
   async prevPage() {
-    await this.model.previousPage();
-    await this.loadGames();
+    const games = await this.model.previousPage();
+    this.view.renderGames(games);
   }
 }

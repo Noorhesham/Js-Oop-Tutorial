@@ -1,10 +1,9 @@
-// Assuming config is in a separate file named config.js
-import { config } from "../config.js";
-
-export class GameModel {
-  constructor(filters = {}) {
+const BACKENDAPI = `http://localhost:3000`;
+export default class GameModel {
+  constructor(filters = {}, page_size) {
     this.games = [];
     this.currentPage = 1;
+    this.page_size = page_size || 12;
     this.filters = {
       genres: "",
       platforms: "",
@@ -17,15 +16,16 @@ export class GameModel {
 
   async fetchGames() {
     try {
+      //
       const queryParams = new URLSearchParams({
         page: this.currentPage,
-        page_size: config.GAMES_PER_PAGE,
+        page_size: this.page_size || 12,
         ...this.filters,
       });
 
-      const response = await fetch(`http://localhost:3000/api/games?${queryParams}`);
+      const response = await fetch(`${BACKENDAPI}/api/games?${queryParams}`);
       const data = await response.json();
-      console.log(response, data);
+      console.log(data);
       this.games = data.results.map((game) => ({
         id: game.id,
         title: game.name,
@@ -46,6 +46,7 @@ export class GameModel {
   updateFilters(newFilters) {
     this.filters = { ...this.filters, ...newFilters };
     this.currentPage = 1; // Reset to first page when filters change
+    return this.fetchGames();
   }
   generatePrice(gameId) {
     // This is just for demo purposes
@@ -61,7 +62,7 @@ export class GameModel {
 
   nextPage() {
     this.currentPage++;
-    return this.fetchGames();
+    return this.fetchGames(); //THIS.GAMES
   }
 
   previousPage() {
@@ -69,6 +70,7 @@ export class GameModel {
       this.currentPage--;
       return this.fetchGames();
     }
+
     return Promise.resolve(this.games);
   }
 }

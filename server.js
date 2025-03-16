@@ -1,6 +1,5 @@
 const express = require("express");
 const cors = require("cors");
-const axios = require("axios");
 
 const app = express();
 app.use(cors()); // Enable CORS for all routes
@@ -27,6 +26,10 @@ app.get("/api/games", async (req, res) => {
   } catch (error) {
     res.status(500).json({ error: error.message });
   }
+});
+app.get("/api/categories", async (req, res) => {
+  console.log(req, "hello");
+  res.json("hello");
 });
 const PORT = 3000;
 app.listen(PORT, () => {

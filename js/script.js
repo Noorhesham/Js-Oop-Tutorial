@@ -1,5 +1,5 @@
-import { GameController } from "./controller/gameController.js";
-import { GameModel } from "./model/gamesModel.js";
+import GameController from "./controller/gameController.js";
+import GameModel from "./model/gamesModel.js";
 import GameView from "./view/gameView.js";
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -9,11 +9,10 @@ document.addEventListener("DOMContentLoaded", function () {
       platforms: 187,
       ordering: "-metacritic",
     }),
-    new GameView()
+    new GameView("games-grid")
   );
   app.loadGames();
   const swiper = new Swiper(".featured-slider", {
-    // Optional parameters
     loop: true,
     effect: "fade",
     fadeEffect: {
@@ -24,12 +23,11 @@ document.addEventListener("DOMContentLoaded", function () {
       delay: 5000,
       disableOnInteraction: false,
     },
-    // No default pagination since we're using custom
   });
 
   // Custom pagination with game list
   const gameItems = document.querySelectorAll(".game-item");
-
+  console.log(gameItems);
   // Set initial active state
   updateActiveGameItem(0);
 
@@ -37,6 +35,7 @@ document.addEventListener("DOMContentLoaded", function () {
   gameItems.forEach((item) => {
     item.addEventListener("click", function () {
       const slideIndex = parseInt(this.getAttribute("data-slide-index"));
+
       swiper.slideTo(slideIndex);
     });
   });
@@ -45,9 +44,7 @@ document.addEventListener("DOMContentLoaded", function () {
   swiper.on("slideChange", function () {
     updateActiveGameItem(swiper.realIndex);
   });
-
   function updateActiveGameItem(index) {
-    // Remove active class from all items
     gameItems.forEach((item) => {
       item.classList.remove("active");
     });
@@ -56,16 +53,6 @@ document.addEventListener("DOMContentLoaded", function () {
     const activeItem = document.querySelector(`.game-item[data-slide-index="${index}"]`);
     if (activeItem) {
       activeItem.classList.add("active");
-
-      // Scroll the item into view on mobile
-      if (window.innerWidth <= 768) {
-        activeItem.scrollIntoView({ behavior: "smooth", block: "nearest" });
-      }
     }
   }
-
-  // Handle window resize for responsive adjustments
-  window.addEventListener("resize", function () {
-    swiper.update();
-  });
 });
